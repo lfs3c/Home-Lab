@@ -1,37 +1,54 @@
 # 🧠 LF-Home-Lab
 
+ <!--Badges -->                                                
 ![Debian](https://img.shields.io/badge/Debian-12%20Bookworm-A81D33?logo=debian&logoColor=white)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-2%20Nodes-C51A4A?logo=raspberry-pi&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)
+![Pi-hole](https://img.shields.io/badge/Pi--hole-DNS%20Filtering-96060C?logo=pi-hole&logoColor=white)
+![N8N](https://img.shields.io/badge/N8N-Automation-EA4B71?logo=n8n&logoColor=white)
+![PhotoPrism](https://img.shields.io/badge/PhotoPrism-Media-00ADD8?logo=google-photos&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?logo=docker&logoColor=white)
-![Security](https://img.shields.io/badge/Security-Hardened-green?logo=security&logoColor=white)
+![Security](https://img.shields.io/badge/Security-Hardened-28A745?logo=security&logoColor=green)
+![Syslog](https://img.shields.io/badge/Syslog-Monitoring-5E5E5E?logo=elastic-stack&logoColor=blue)
+![Ollama](https://img.shields.io/badge/Ollama-LLM-000000?logo=ollama&logoColor=white)
+![Stable Diffusion](https://img.shields.io/badge/Stable%20Diffusion-AI-FF6F00?logo=stable-diffusion&logoColor=white)
 ![License](https://img.shields.io/badge/License-CC0--1.0-lightgrey.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/LFreitas88/LF-Home-Lab)
+![Repo Size](https://img.shields.io/github/repo-size/LFreitas88/LF-Home-Lab) 
 
-> **Cybersecurity homelab documentation: Debian server hardening, self-hosted services, and infrastructure setup**
+
+> **Cybersecurity homelab documentation: Debian server hardening, self-hosted services, Raspberry Pi infrastructure, and real-world security projects**  
 
 ---
 
 ## 👨‍💻 About Me
 
 **Leandro Freitas** | Cybersecurity Student @ Bergen Community College
-📍 New Jersey, USA | 🎓 Graduating 2026
-💼 CNC Programmer → Searchin for an opportunity to migrate to I.T. / Cybersecurity (in progress)
+📍 New Jersey, USA | 🎓 Graduating 2027
+💼 Career transition: CNC Programmer → IT/Cybersecurity
 
-**Why this repository exists:**
-I learn best by building real infrastructure. This homelab started as a simple Debian server and my idea is to evolve it into a production environment running DNS security (Pi-hole), workflow automation (N8N), and various self-hosted services. Every configuration, security hardening step, and experiment will be documented here.
+This repository documents my hands-on learning journey building and securing real infrastructure. Everything here runs on actual hardware and reflects real decisions
 
 ---
 
-## 💡 About this Repository
+## 💡 Repository Purpose
 
-This is where I bring together everything I've been working on — from Python scripts to server hardening and infrastructure documentation.
-Each folder represents part of my learning process and the structure I use in my homelab to keep things organized, reproducible, and easy to maintain.
-
-**The goal of this repo:**
-→ Learn by doing with real infrastructure
-→ Build tools and services that actually work
-→ Keep my lab clean, documented, and evolving
-→ Create a professional portfolio for cybersecurity career transition
+**What this is:**
+- Working documentation for my production homelab                             
+- Portfolio of applied security concepts
+- Learning journal with real implementations                                  
+                                                                                
+**Current infrastructure:**                                                   
+- Debian 12 server (server-lf1) running Pi-hole + N8N                         
+- Raspberry Pi NAS with PhotoPrism + Samba                                    
+- Raspberry Pi syslog sensor (Blue Team practice)                             
+- Flipper Zero security testing                                               
+- Self-hosted AI models (Ollama, Stable Diffusion)                            
+                                                                              
+**Goals:**                                                                    
+- Apply classroom concepts to real systems                                    
+- Build maintainable, documented infrastructure                               
+- Create technical portfolio for career transition **What this is:**
 
 ---
 
@@ -39,94 +56,55 @@ Each folder represents part of my learning process and the structure I use in my
 
 | Folder | Description | Status |
 |--------|-------------|--------|
-| [**CollegePythonScripts/**](CollegePythonScripts) | Collection of Python scripts from my academic journey (INF-103) — includes exercises, automations, and OOP projects with full documentation | ✅ Completed |
-| [**server_setup/**](server_setup) | Configuration files, hardening reports, and documentation for my Debian-based home server — includes network setup, SSH security, Lynis audits, and systemd hardening | 🔄 In Progress |
+| [**CollegePythonScripts/**](CollegePythonScripts) | Collection of Python scripts from my academic journey (INF-103) — includes exercises, automations, and OOP projects with full documentation |
+| [**server_setup/**](server_setup) | Configuration files, hardening reports, and documentation for my Debian-based home server | 
 
 ---
 
-## 🎯 What's Inside
+## 🏗️ Lab Infrastructure
 
-### Server Infrastructure (server-lf1)
-- **OS**: Debian 12 (Bookworm) - minimal install
-- **Services Running**:
-  - 🛡️ **Pi-hole** - Network-wide DNS ad-blocking (Port 53, 80)
-  - ⚙️ **N8N** - Workflow automation platform (Port 5678)
-  - 🐳 **Docker** - Container orchestration for self-hosted services
-- **Security Hardening**:
-  - SSH key-only authentication
-  - Lynis security audits (ongoing score improvements)
-  - systemd service hardening
-  - Firewall configuration (UFW)
+### Server-LF1 (Debian 12)                                                    
+**Services:**                                                                 
+- 🛡️ **Pi-hole** - Network-wide DNS filtering (ports 53, 80)                  
+- ⚙️ **N8N** - Workflow automation (port 5678)                                
+- 🐳 **Docker** - Container orchestration                                     
 
-### Academic Projects
-- **Python Fundamentals** (INF-103, Bergen Community College)
-  - 16+ functional Python scripts
-  - OOP project: Mobile phone management system
-  - Caesar cipher, password generator, file manipulation
-  - Well-documented with learning context
+**Security measures:**                                                        
+- SSH key-only authentication                                                 
+- UFW firewall configuration                                                  
+- Documented hardening process                                                
 
----
+### Raspberry Pi Projects                                                     
+**NAS/Media Server:**                                                         
+- Samba file sharing                                                          
+- PhotoPrism photo management                                                 
+- External HDD storage (no SD writes)                                         
 
-## ⚙️ Tech Stack
+**Blue Team Sensor:**                                                         
+- Centralized syslog collection                                               
+- Fail2Ban implementation                                                     
+- Lightweight passive monitoring                                              
 
-**Infrastructure:**
-- Debian 12 Bookworm (minimal install)
-- Docker + Docker Compose
-- SSH (key-based authentication only)
+---                                                                           
 
-**Security Tools:**
-- Lynis (security auditing)
-- systemd-analyze security
-- UFW (firewall)
+## 🎓 Academic Work                                                           
 
-**Services:**
-- Pi-hole (DNS ad-blocking)
-- N8N (workflow automation)
+**Python Fundamentals (INF-103)**                                             
+- 16+ functional scripts documented with learning context                     
+- OOP project: Mobile phone management system                                 
+- Topics: file handling, automation, Caesar cipher, password generation       
 
-**Development:**
-- Python 3.11+
-- Git (SSH authentication)
-- Ubuntu 24.04 (development environment)
+---                                                                           
 
----
+## ⚖️ License                                                                 
+                                                                                
+**CC0-1.0 License (Public Domain)** unless specified otherwise.               
+Free to use for educational or personal purposes.                             
 
-## 📊 Current Status
+---                                                                           
+                                                                                
+## 💬 Contact                                                                 
 
-| Metric | Value |
-|--------|-------|
-| **Server Uptime** | Production (server-lf1) |
-| **Security Score** | Improving (Lynis audits tracked) |
-| **Services Running** | Pi-hole, N8N, Docker containers |
-| **Active Development** | Ongoing hardening & documentation |
+Questions or suggestions? Open an issue or reach out.                         
 
----
-
-## 🎓 Learning Journey
-
-This homelab documents my progression:
-
-1. **✅ Python Fundamentals** (INF-103) — Basic scripting, OOP concepts
-2. **🔄 Linux System Administration** — Debian server setup, SSH, systemd
-3. **🔄 Security Hardening** — Server hardening, auditing, best practices
-4. **📅 Network Security** (INF-165, Upcoming) — Firewalls, DNS, network segmentation
-
----
-
-## ⚖️ License
-
-All content here is shared under the **CC0-1.0 License (Public Domain)**.
-You're free to explore, reuse, or modify anything for educational or personal purposes.
-
----
-
-## 💬 Final Note
-
-This homelab keeps growing as I learn new tools and technologies.
-It's my personal documentation hub — a place to experiment, break things, fix them, and document the entire journey from student to cybersecurity professional.
-
-**Last Updated:** November 2025
-**Status:** Active learning project
-
----
-
-**Questions or suggestions?** Feel free to open an issue or reach out!
+**Last updated:** January 2026         
