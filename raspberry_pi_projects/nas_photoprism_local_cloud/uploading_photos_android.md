@@ -140,5 +140,5 @@ It is especially useful for:
 - PhotoPrism: Self-hosted NAS / local server
 
 
-###Thank you for taking the time to read this guide.
+### Thank you for taking the time to read this guide.
 If you have any questions, suggestions, or improvements to share, feel free to open an issue or reach out. Feedback is always welcome.
