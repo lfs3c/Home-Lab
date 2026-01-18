@@ -9,7 +9,7 @@ ISO_NAME="debian-13.1.0-amd64-netinst.iso"
 SHA_URL="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA512SUMS"
 SIG_URL="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA512SUMS.sign"
 
-# Debian CD Team signing key (current)
+# Debian CD Team signing key (current - Oct 16 2025)
 DEBIAN_CD_KEY="DF9B9C49EAA9298432589D76DA87E80D6294BE9B"
 
 echo "== step 0: go to ISO dir =="
