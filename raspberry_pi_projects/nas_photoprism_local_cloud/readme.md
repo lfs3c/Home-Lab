@@ -1,4 +1,4 @@
-# NAS + Samba + PhotoPrism
+# NAS + Samba + PhotoPrism on Raspberry Pi 4
 
 ## Overview
 
