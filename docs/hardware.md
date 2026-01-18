@@ -38,6 +38,7 @@
 |--------|-----------|-------|
 | **Flipper Zero** | Custom firmware | Security testing and RF analysis |
 | **Raspberry Pi 3B** | Raspberry Pi OS | Experiments / lightweight services |
+| **Raspberry Pi 4B** | Raspberry Pi OS | NAS / Personal and Private Cloud service for images/videos |
 
 ---
 
