@@ -28,3 +28,7 @@ The goal of this documentation is **reproducibility** and **clarity**. Every ste
 - Timezone: `America/New_York`
 - Locale: `en_US.UTF-8`
 - Access mode: Headless (SSH)
+
+---
+
+## To see the setup and configuration, please click on: [**instalation_and_setup**](https://github.com/LFreitas88/LF-Home-Lab/blob/main/rapbery_pi_projects/nas_photoprims_local_cloud/instalation_and_setup.md)
