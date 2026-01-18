@@ -31,4 +31,4 @@ The goal of this documentation is **reproducibility** and **clarity**. Every ste
 
 ---
 
-## To see the setup and configuration, please click on: [**instalation_and_setup**](https://github.com/LFreitas88/LF-Home-Lab/blob/main/rapbery_pi_projects/nas_photoprims_local_cloud/instalation_and_setup.md)
+## To see the setup and configuration, please click on: [**instalation_and_setup**](https://github.com/LFreitas88/LF-Home-Lab/blob/main/raspberry_pi_projects/nas_photoprism_local_cloud/installation_and_setup.md)
