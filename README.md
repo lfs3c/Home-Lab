@@ -54,10 +54,11 @@ This repository documents my hands-on learning journey building and securing rea
 
 ## 🧩 Repository Structure
 
-| Folder | Description | Status |
-|--------|-------------|--------|
+| Folder | Description | 
+|--------|-------------|
 | [**CollegePythonScripts/**](CollegePythonScripts) | Collection of Python scripts from my academic journey (INF-103) — includes exercises, automations, and OOP projects with full documentation |
 | [**server_setup/**](server_setup) | Configuration files, hardening reports, and documentation for my Debian-based home server | 
+| [**raspberry_pi_projects/**](raspberry_pi_projects) | Self-hosted services and infrastructure projects built on Raspberry Pi devices | 
 
 ---
 
