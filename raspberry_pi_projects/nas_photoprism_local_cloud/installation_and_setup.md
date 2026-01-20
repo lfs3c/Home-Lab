@@ -1,5 +1,14 @@
 # Initial System Setup
 
+> **Note:**  
+> The operating system details and installation method are documented in the main [README](./readme.md).
+>
+> The initial access to the Raspberry Pi was performed using a wired Ethernet connection, a USB keyboard, and a micro-HDMI to HDMI cable connected to a monitor.  
+> This setup was used only until the **Network Configuration** step was completed.
+>
+> From that point forward, all configuration and management were performed exclusively via **SSH**, with no additional cables, keyboard, or monitor required.
+
+
 ### First Boot
 
 System update:
