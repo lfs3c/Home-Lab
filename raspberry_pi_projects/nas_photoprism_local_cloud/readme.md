@@ -25,7 +25,7 @@ The goal of this documentation is **reproducibility** and **clarity**. Every ste
 - OS: Raspberry Pi OS Lite (64‑bit)
 - Hostname: `pi4-nas`
 - User: `user`
-- Timezone: `America/New_York`
+- Timezone: `TIMEZONE (e.g. America/New_York)`
 - Locale: `en_US.UTF-8`
 - Access mode: Headless (SSH)
 
