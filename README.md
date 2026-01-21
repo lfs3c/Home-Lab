@@ -1,4 +1,4 @@
-# 🧠 LF-Home-Lab
+# 🧠 Home-Lab
 
  <!--Badges -->                                                
 ![Debian](https://img.shields.io/badge/Debian-12%20Bookworm-A81D33?logo=debian&logoColor=white)
