@@ -1,0 +1,37 @@
+# Example Matrix Synapse configuration for the architecture documented here.
+# Review every value before use. Do not commit real secrets.
+
+server_name: "example.com"
+public_baseurl: "https://matrix.example.com/"
+
+listeners:
+  - port: 8008
+    tls: false
+    type: http
+    x_forwarded: true
+    bind_addresses: ["0.0.0.0"]
+    resources:
+      - names: [client, federation]
+        compress: false
+
+database:
+  name: psycopg2
+  args:
+    user: synapse
+    password: "REPLACE_WITH_A_STRONG_PASSWORD"
+    database: synapse
+    host: postgres
+    port: 5432
+    cp_min: 5
+    cp_max: 10
+
+enable_registration: false
+enable_registration_without_verification: false
+report_stats: false
+
+macaroon_secret_key: "REPLACE_WITH_OPENSSL_RAND_HEX_32"
+registration_shared_secret: "REPLACE_WITH_OPENSSL_RAND_HEX_32"
+
+trusted_key_servers:
+  - server_name: "matrix.org"
+
