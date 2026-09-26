@@ -145,7 +145,7 @@ wlp3s0  wifi  connected  <SSID>
 
 | Problem                                | Cause                         | Fix                                                                                 |
 | -------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------- |
-| `Destination Host Unreachable`         | Wrong default route           | `sudo ip route del default && sudo ip route add default via 192.168.1.1 dev wlp3s0` |
+| `Destination Host Unreachable`         | Wrong default route           | `sudo ip route del default && sudo ip route add default via <GATEWAY_IP> dev wlp3s0` |
 | `Temporary failure in name resolution` | DNS missing                   | `sudo nmcli connection modify "<SSID>" ipv4.dns "8.8.8.8,1.1.1.1"`                  |
 | `module bcma in use`                   | Legacy Broadcom module loaded | Blacklist `bcma`, `b43`, `brcmsmac`, then `sudo update-initramfs -u && reboot`      |
 
