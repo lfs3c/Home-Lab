@@ -43,20 +43,20 @@ sudo systemctl restart ssh
 ## Network Configuration
 
 - Interface: `wlan0`
-- Static IP: `192.168.1.221/24`
-- Gateway: `192.168.1.1`
+- Static IP: `<STATIC_IP_CIDR>`
+- Gateway: `<GATEWAY_IP>`
 - DNS: `1.1.1.1`, `8.8.8.8`
 
 Configured using NetworkManager:
 ```bash
-sudo nmcli connection modify "SSID_NAME" \
+sudo nmcli connection modify "<WIFI_SSID>" \
   ipv4.method manual \
-  ipv4.addresses 192.168.1.221/24 \
-  ipv4.gateway 192.168.1.1 \
+  ipv4.addresses <STATIC_IP_CIDR> \
+  ipv4.gateway <GATEWAY_IP> \
   ipv4.dns "1.1.1.1 8.8.8.8"
 
-sudo nmcli connection down "SSID_NAME"
-sudo nmcli connection up "SSID_NAME"
+sudo nmcli connection down "<WIFI_SSID>"
+sudo nmcli connection up "<WIFI_SSID>"
 ```
 
 Ethernet disabled:
@@ -173,7 +173,7 @@ sudo smbpasswd -e user
 ```ini
 [global]
    workgroup = WORKGROUP
-   server string = pi4-nas
+   server string = <NAS_HOSTNAME>
    security = user
    map to guest = never
    unix charset = UTF-8
@@ -198,7 +198,7 @@ sudo systemctl restart smbd nmbd
 
 Access:
 ```text
-smb://pi4-nas/NAS
+smb://<NAS_HOSTNAME>/NAS
 ```
 
 ---
@@ -231,14 +231,14 @@ docker compose up -d
 
 Access:
 ```text
-http://pi4-nas:2342
+http://<NAS_HOSTNAME>:2342
 ```
 
 ---
 
 ## PhotoPrism Configuration Notes
 
-- Initial admin user renamed to `user`
+- Initial admin username: `<PHOTOPRISM_ADMIN_USER>`
 - Single Super Admin user
 - Facial recognition enabled gradually
 - Indexing performed in small batches
