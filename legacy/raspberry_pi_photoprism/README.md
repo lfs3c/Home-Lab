@@ -1,35 +1,33 @@
 # NAS + Samba + PhotoPrism on Raspberry Pi 4
 
+> **Legacy documentation:** this records a historical Raspberry Pi 4 deployment and does not describe the current PhotoPrism host.
+
 ## Overview
 
-This document provides a **complete, end‑to‑end technical record** of the creation of a self‑hosted **NAS with Samba and PhotoPrism**, deployed on a **Raspberry Pi 4** (4 GB RAM).
+This document provides a technical record of a self-hosted NAS with Samba and PhotoPrism that was deployed on a Raspberry Pi 4 (4 GB RAM).
 
-The goal of this documentation is **reproducibility** and **clarity**. Every step listed here was executed during the project. No assumptions, shortcuts, or undocumented changes were made.
-
----
+The material is retained for historical and learning reference.
 
 ## Hardware Used
 
-### Raspberry Pi 4 (NAS Core)
+### Raspberry Pi 4 (Historical NAS Core)
+
 - Model: Raspberry Pi 4 Model B
 - RAM: 4 GB
 - Storage:
-  - microSD (64 GB) — operating system only
-  - External HDD (2 TB) — all data and services
-- Network: Wi‑Fi only (Ethernet disabled)
-
----
+  - microSD (64 GB) — operating system
+  - external HDD (2 TB) — data and services
+- Network: Wi-Fi
 
 ## Operating System
 
-- OS: Raspberry Pi OS Lite (64‑bit)
-- Hostname: `pi4-nas`
-- User: `user`
-- Timezone: `TIMEZONE (e.g. America/New_York)`
-- Locale: `en_US.UTF-8`
-- Access mode: Headless (SSH)
+The historical deployment used Raspberry Pi OS Lite (64-bit) and headless SSH administration.
 
----
+Operational hostnames, usernames, addressing, and other environment-specific identifiers are omitted from this public summary.
 
-## To see the setup and configuration, please click on: [**instalation_and_setup**](https://github.com/LFreitas88/LF-Home-Lab/blob/main/raspberry_pi_projects/nas_photoprism_local_cloud/installation_and_setup.md)
-## To see how to Uploading Photos, please click on: [**uploading_photos_android**](https://github.com/LFreitas88/LF-Home-Lab/blob/main/raspberry_pi_projects/nas_photoprism_local_cloud/uploading_photos_android.md)
+## Documentation
+
+- [Installation and setup](installation_and_setup.md)
+- [Uploading photos from Android](uploading_photos_android.md)
+
+For the current PhotoPrism deployment, see [PhotoPrism](../../services/media/photoprism/).
