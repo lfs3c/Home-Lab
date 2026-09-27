@@ -1,5 +1,7 @@
 # Hermes
 
+![Hermes](https://img.shields.io/badge/Hermes-Home%20Lab%20Admin-6C63FF) ![VM](https://img.shields.io/badge/VM-LaptopU-E95420?logo=ubuntu&logoColor=white) ![Security](https://img.shields.io/badge/Design-Least%20Privilege-28A745)
+
 Hermes is the Home Lab administration assistant project.
 
 ## Architecture

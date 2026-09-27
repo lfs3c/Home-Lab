@@ -1,5 +1,7 @@
 # LF1
 
+![Debian](https://img.shields.io/badge/Debian-12%20Bookworm-A81D33?logo=debian&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white) ![Server](https://img.shields.io/badge/Role-Primary%20Server-555555?logo=linux&logoColor=white) ![Security](https://img.shields.io/badge/Security-Hardened-28A745)
+
 LF1 is the primary Home Lab server.
 
 ## Verified Platform

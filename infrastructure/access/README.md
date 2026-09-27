@@ -1,5 +1,7 @@
 # Remote Access and Traffic Routing
 
+![Twingate](https://img.shields.io/badge/Twingate-Private%20Access-412991) ![HAProxy](https://img.shields.io/badge/HAProxy-Reverse%20Proxy-106DA9) ![Dynamic DNS](https://img.shields.io/badge/ddclient-Dynamic%20DNS-555555) ![coTURN](https://img.shields.io/badge/coTURN-TURN%2FSTUN-555555)
+
 LF1 currently provides supporting access and routing infrastructure for the Home Lab.
 
 Verified components include:

@@ -1,5 +1,7 @@
 # Synapse Setup Files
 
+![Matrix](https://img.shields.io/badge/Matrix-Synapse-0DBD8B?logo=matrix&logoColor=white) ![Templates](https://img.shields.io/badge/Config-Templates-lightgrey) ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white) ![HAProxy](https://img.shields.io/badge/HAProxy-Reverse%20Proxy-106DA9)
+
 ## Overview
 
 This folder contains the starter files used by the main Synapse project documentation.

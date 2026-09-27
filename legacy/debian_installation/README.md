@@ -1,5 +1,7 @@
 # 🖥️ Debian 12 Wi-Fi Setup on Apple iMac (Broadcom chipset)
 
+![Legacy](https://img.shields.io/badge/Status-Legacy-lightgrey) ![Debian](https://img.shields.io/badge/Debian-12%20Bookworm-A81D33?logo=debian&logoColor=white) ![Network](https://img.shields.io/badge/Broadcom-Wi--Fi-555555)
+
 > Apple hardware often uses Broadcom Wi-Fi chipsets which are not supported by Debian’s default installer.  
 > This guide documents how I installed Debian 12 (Bookworm) on an Apple iMac, enabled Wi-Fi, and configured NetworkManager for persistent connectivity.  
 > All SSIDs, passwords, and private IPs have been replaced with placeholders for security.

@@ -1,5 +1,7 @@
 # Hermes Control API
 
+![Status](https://img.shields.io/badge/Status-Active-28A745) ![LF1](https://img.shields.io/badge/Host-LF1-A81D33?logo=debian&logoColor=white) ![API](https://img.shields.io/badge/API-Controlled%20Capabilities-009688) ![Security](https://img.shields.io/badge/Security-Least%20Privilege-28A745)
+
 **Status:** Active on LF1
 
 The Hermes Control API is the current verified control interface between Hermes and LF1.

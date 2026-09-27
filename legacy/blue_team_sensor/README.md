@@ -1,5 +1,7 @@
 # Raspberry Pi 3B Blue Team Sensor
 
+![Legacy](https://img.shields.io/badge/Status-Legacy-lightgrey) ![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-Blue%20Team-C51A4A?logo=raspberry-pi&logoColor=white) ![Security](https://img.shields.io/badge/Security-Monitoring-28A745)
+
 ## Overview
 
 This document provides a **technical record** of a lightweight **Blue Team sensor** built on a **Raspberry Pi 3 Model B**.

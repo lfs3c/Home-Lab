@@ -1,5 +1,7 @@
 # Backup Infrastructure
 
+![BorgBackup](https://img.shields.io/badge/BorgBackup-1.2.4-00A86B?logo=linux&logoColor=white) ![Backup](https://img.shields.io/badge/Backup-Manual-blue) ![Storage](https://img.shields.io/badge/Storage-External%20ext4-555555?logo=linux&logoColor=white)
+
 LF1 uses BorgBackup for manual backups to dedicated external storage.
 
 ## Current State

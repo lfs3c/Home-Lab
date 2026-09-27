@@ -1,5 +1,7 @@
 # 🧩 Item 7 — Systemd Service Hardening (systemd-analyze security)
 
+![systemd](https://img.shields.io/badge/systemd-Service%20Hardening-555555?logo=linux&logoColor=white) ![Security](https://img.shields.io/badge/Security-Analysis-28A745) ![Debian](https://img.shields.io/badge/Debian-12%20Bookworm-A81D33?logo=debian&logoColor=white)
+
 ## 🔐 Objective
 Reduce the attack surface of critical systemd services using native sandboxing directives.  
 Target: **measurable security improvement** without breaking SSH, networking, or automation.

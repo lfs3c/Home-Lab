@@ -1,5 +1,7 @@
 # Step 1 — Verify Debian 13 ISO (authenticity & integrity)
 
+![Legacy](https://img.shields.io/badge/Status-Legacy-lightgrey) ![Security](https://img.shields.io/badge/ISO-Verification-28A745) ![Linux](https://img.shields.io/badge/Linux-CLI-555555?logo=linux&logoColor=white)
+
 ## Objective
 Verify the ISO is authentic (GPG signature) and intact (SHA512) before installing on the home server.
 

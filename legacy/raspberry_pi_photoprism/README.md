@@ -1,5 +1,7 @@
 # NAS + Samba + PhotoPrism on Raspberry Pi 4
 
+![Legacy](https://img.shields.io/badge/Status-Historical-lightgrey) ![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-4-C51A4A?logo=raspberry-pi&logoColor=white) ![PhotoPrism](https://img.shields.io/badge/PhotoPrism-Historical%20Deployment-00ADD8?logo=googlephotos&logoColor=white) ![NAS](https://img.shields.io/badge/NAS-Samba-555555)
+
 > **Legacy documentation:** this records a historical Raspberry Pi 4 deployment and does not describe the current PhotoPrism host.
 
 ## Overview

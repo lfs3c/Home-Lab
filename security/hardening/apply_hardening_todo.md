@@ -1,5 +1,7 @@
 # initial_audit_lynis (Debian Server) — **Sanitized for Public GitHub**
 
+![Lynis](https://img.shields.io/badge/Lynis-Hardening-5E5E5E) ![Security](https://img.shields.io/badge/Security-Sanitized%20Public%20Copy-28A745) ![Debian](https://img.shields.io/badge/Debian-12%20Bookworm-A81D33?logo=debian&logoColor=white)
+
 > **Source:** First Lynis security scan after fresh setup  
 > **Date of audit:** 2025-10-18 (America/New_York)  
 > **Tool:** Lynis 3.0.8  

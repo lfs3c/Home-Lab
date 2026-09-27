@@ -1,5 +1,7 @@
 # LaptopU
 
+![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04%20LTS-E95420?logo=ubuntu&logoColor=white) ![KVM](https://img.shields.io/badge/KVM-libvirt-FF6600?logo=linux&logoColor=white) ![NVIDIA](https://img.shields.io/badge/NVIDIA-RTX%204070-76B900?logo=nvidia&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-Workloads-2496ED?logo=docker&logoColor=white) ![Ollama](https://img.shields.io/badge/Ollama-Local%20AI-000000?logo=ollama&logoColor=white)
+
 LaptopU is the primary Home Lab workstation for development, virtualization, cybersecurity labs, local AI workloads, and administration.
 
 ## Verified Platform
