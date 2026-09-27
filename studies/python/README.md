@@ -1,5 +1,7 @@
 # PythonScripts Folder
 
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white) ![Course](https://img.shields.io/badge/INF--103-Programming-306998) ![Study](https://img.shields.io/badge/Type-Academic%20Work-lightgrey)
+
 **Author:** Leandro Correia de Freitas  
 **Course:** INF-103 – Introduction to Programming (Python)  
 **College:** Bergen Community College (Cybersecurity Program)  
