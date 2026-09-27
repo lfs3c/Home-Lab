@@ -1,5 +1,7 @@
 # Home Lab Network
 
+![Pi-hole](https://img.shields.io/badge/Pi--hole-DNS%20Filtering-96060C?logo=pi-hole&logoColor=white) ![UFW](https://img.shields.io/badge/UFW-Firewall-28A745?logo=ubuntu&logoColor=white) ![HAProxy](https://img.shields.io/badge/HAProxy-Routing-106DA9) ![SNMP](https://img.shields.io/badge/SNMP-Monitoring-5E5E5E)
+
 This directory documents the network infrastructure that supports the Home Lab.
 
 ## Verified LF1 Connectivity
