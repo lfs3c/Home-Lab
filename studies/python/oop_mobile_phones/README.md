@@ -1,5 +1,7 @@
 # 📱 Mobile Class – Object-Oriented Programming (Python)
 
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white) ![OOP](https://img.shields.io/badge/Python-OOP-306998) ![Study](https://img.shields.io/badge/Type-Academic%20Project-lightgrey)
+
 **Author:** Leandro Correia de Freitas  
 **Date:** October 13, 2025  
 
@@ -21,8 +23,8 @@ It focuses on:
 
 | File | Description |
 |------|--------------|
-| [`mobile.py`](https://github.com/LFreitas88/LF-Home-Lab/blob/main/PythonScripts/OOP_MobilePhones/mobile.py) | Defines the `Mobile` class and its methods. |
-| [`main.py`](https://github.com/LFreitas88/LF-Home-Lab/blob/main/PythonScripts/OOP_MobilePhones/main.py) | Imports the class and creates multiple `Mobile` objects. |
+| [`mobile.py`](mobile.py) | Defines the `Mobile` class and its methods. |
+| [`main.py`](main.py) | Imports the class and creates multiple `Mobile` objects. |
 | `README.md` | Project documentation. |
 
 ---
@@ -30,7 +32,7 @@ It focuses on:
 ## 🚀 How to Run
 
 1. Clone or download this folder.  
-2. Make sure both [`mobile.py`](https://github.com/LFreitas88/LF-Home-Lab/blob/main/PythonScripts/OOP_MobilePhones/mobile.py) and [`main.py`](https://github.com/LFreitas88/LF-Home-Lab/blob/main/PythonScripts/OOP_MobilePhones/main.py) are in the same directory.  
+2. Make sure both [`mobile.py`](mobile.py) and [`main.py`](main.py) are in the same directory.  
 3. Open a terminal in that folder.  
 4. Run:
 
