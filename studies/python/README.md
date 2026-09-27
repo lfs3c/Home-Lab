@@ -31,22 +31,22 @@ Below is a quick summary of what each script does:
 
 | Script | Description |
 |--------|--------------|
-| [**alphabetIndex.py**](alphabetIndex.py) | Takes a number and returns the corresponding letter in the alphabet. |
-| [**basicCaesarCypher.py**](basicCaesarCypher.py) | A simple Caesar Cipher that encrypts and decrypts messages by shifting letters. |
-| [**celsiusToFahrenheit.py**](celsiusToFahrenheit.py) | Converts a temperature from Celsius to Fahrenheit. |
-| [**diceRollSimulator.py**](diceRollSimulator.py) | Simulates rolling two dice and shows the result. |
-| [**lotteryNumberGenerator.py**](lotteryNumberGenerator.py) | Generates random lottery numbers and includes a Mega Millions version. |
-| [**monthlySalesTax.py**](monthlySalesTax.py) | Calculates monthly state and county sales taxes. |
-| [**oceanLevelTracker.py**](oceanLevelTracker.py) | Shows how much ocean levels will rise over the next 25 years. |
-| [**propertyTaxCalculator.py**](propertyTaxCalculator.py) | Calculates property assessment value and property tax. |
-| [**randomPasswordGenerator.py**](randomPasswordGenerator.py) | Generates a random password with variable length and ASCII characters. |
-| [**safeDivisionProgram.py**](safeDivisionProgram.py) | Handles division with input validation and zero-division error handling. |
-| [**sentenceCapitalizer.py**](sentenceCapitalizer.py) | Takes a sentence and capitalizes the first letter of each sentence. |
-| [**speedyLimit.py**](speedyLimit.py) | A small “traffic court” program that calculates speeding fines and penalty points. |
-| [**stadiumTicketSales.py**](stadiumTicketSales.py) | Calculates ticket sales totals for different stadium seating categories. |
-| [**wordFrequencyCounter.py**](wordFrequencyCounter.py) | Reads a text file and counts how many times each word appears. |
-| [**writeNumbersToFile.py**](writeNumbersToFile.py) | Writes numbers from 1 to 100 into a text file. |
-| [**OOP_MobilePhones**](https://github.com/LFreitas88/LF-Home-Lab/tree/main/PythonScripts/OOP_MobilePhones) | Demonstrates Object-Oriented Programming: defines a `Mobile` class with attributes and methods, and shows how to use `self` to access data from another file. |
+| [**alphabet_index.py**](alphabet_index.py) | Takes a number and returns the corresponding letter in the alphabet. |
+| [**basic_caesar_cypher.py**](basic_caesar_cypher.py) | A simple Caesar Cipher that encrypts and decrypts messages by shifting letters. |
+| [**celsius_to_fahrenheit.py**](celsius_to_fahrenheit.py) | Converts a temperature from Celsius to Fahrenheit. |
+| [**dice_roll_simulator.py**](dice_roll_simulator.py) | Simulates rolling two dice and shows the result. |
+| [**lottery_number_generator.py**](lottery_number_generator.py) | Generates random lottery numbers and includes a Mega Millions version. |
+| [**monthly_sales_tax.py**](monthly_sales_tax.py) | Calculates monthly state and county sales taxes. |
+| [**ocean_level_tracker.py**](ocean_level_tracker.py) | Shows how much ocean levels will rise over the next 25 years. |
+| [**property_tax_calculator.py**](property_tax_calculator.py) | Calculates property assessment value and property tax. |
+| [**random_password_generator.py**](random_password_generator.py) | Generates a random password with variable length and ASCII characters. |
+| [**safe_division_program.py**](safe_division_program.py) | Handles division with input validation and zero-division error handling. |
+| [**sentence_capitalizer.py**](sentence_capitalizer.py) | Takes a sentence and capitalizes the first letter of each sentence. |
+| [**speedy_limit.py**](speedy_limit.py) | A small “traffic court” program that calculates speeding fines and penalty points. |
+| [**stadium_ticket_sales.py**](stadium_ticket_sales.py) | Calculates ticket sales totals for different stadium seating categories. |
+| [**word_frequency_counter.py**](word_frequency_counter.py) | Reads a text file and counts how many times each word appears. |
+| [**write_numbers_to_file.py**](write_numbers_to_file.py) | Writes numbers from 1 to 100 into a text file. |
+| [**oop_mobile_phones**](https://github.com/LFreitas88/LF-Home-Lab/tree/main/PythonScripts/oop_mobile_phones) | Demonstrates Object-Oriented Programming: defines a `Mobile` class with attributes and methods, and shows how to use `self` to access data from another file. |
 
 
 ---
