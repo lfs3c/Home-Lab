@@ -1,5 +1,7 @@
 # MCP Server for Home Lab
 
+![Status](https://img.shields.io/badge/Status-In%20Development-orange) ![MCP](https://img.shields.io/badge/MCP-Server-6C63FF) ![LF1](https://img.shields.io/badge/Host-LF1-A81D33?logo=debian&logoColor=white) ![Security](https://img.shields.io/badge/Security-Least%20Privilege-28A745)
+
 **Status:** In Development on LF1
 
 ## Purpose
