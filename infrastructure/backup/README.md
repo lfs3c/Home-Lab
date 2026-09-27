@@ -1,5 +1,19 @@
 # Backup Infrastructure
 
-LF1 has dedicated backup storage mounted on a separate external disk.
+LF1 uses BorgBackup for manual backups to dedicated external storage.
 
-The current inventory verifies the dedicated backup mount. Backup software, schedules, retention, and restore procedures should only be documented here after their current configuration has been separately verified.
+## Current State
+
+- BorgBackup 1.2.4 is installed on LF1.
+- Backups are currently initiated manually.
+- A dedicated ext4 backup disk is configured through `/etc/fstab`.
+- The backup storage is separate from the LF1 system disk and PhotoPrism data disk.
+- No Borg systemd service, Borg timer, or Borg cron job is currently configured.
+
+The external backup disk may be disconnected when it is not in use, so its mount is not expected to remain active continuously.
+
+## Documentation Policy
+
+Backup automation, schedules, retention policies, repository paths, and restore procedures will be documented only after they are implemented and verified.
+
+Exact disk UUIDs, repository paths, encryption material, credentials, and other sensitive operational details are intentionally excluded from this public repository.
