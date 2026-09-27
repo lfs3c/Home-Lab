@@ -1,57 +1,46 @@
-# MCP Server for Home Lab
+# LF1 MCP Server
 
-**Status:** In Development on LF1
+**Status:** Milestone 1 complete — authenticated Hermes → LF1 MCP communication
 
 ## Purpose
 
-The MCP Server is the developing LF1-hosted interface that will allow Hermes to interact with the Home Lab through explicit, controlled MCP tools.
+The LF1 MCP Server is a security-focused interface that lets Hermes interact with the Home Lab through explicit, controlled MCP tools.
 
-It is being developed alongside the existing Hermes Control API. The Control API remains the verified baseline while MCP capabilities are implemented and validated.
+The previous Hermes Control API is frozen and retained only as a reference/fallback. New Home Lab integration work is being developed through MCP.
 
-## Architecture
+## Milestone 1
 
-```text
-Hermes VM (LaptopU)
-        |
-        | MCP
-        v
-MCP Server (LF1)
-        |
-        +-- explicit tools
-        +-- authorization
-        +-- validation
-        +-- audit logging
-        |
-        v
-Home Lab
-```
+Verified end-to-end:
 
-## Design Principles
+- official Python MCP SDK (`mcp` 2.2.x)
+- local MCP communication over stdio
+- Streamable HTTP transport
+- persistent systemd service on LF1
+- network access restricted by host firewall
+- Bearer-token authentication
+- anonymous and invalid-token requests rejected with HTTP 401
+- valid token successfully initializes an MCP session
+- Hermes VM discovers and calls the MCP tools remotely
+- `system_health` returns live LF1 health data
+- Hermes completed the remote call without using the frozen Control API
 
-- explicit tools and capabilities
+## Current tools
+
+| Tool | Access | Purpose |
+| --- | --- | --- |
+| `ping` | read-only | Confirm that the MCP server is responding |
+| `system_health` | read-only | Read hostname, uptime, load averages, memory and root filesystem usage |
+
+## Security model
+
 - least privilege
-- input validation
-- authorization checks
-- audit logging
-- secrets kept outside the repository
-- staged development and independent review before production promotion
+- read-only first
+- explicit MCP tools
+- no generic shell or arbitrary command execution
+- Bearer authentication for remote MCP access
+- credentials stored outside the repository
+- host firewall restricts network access
+- administrative capabilities require explicit design and review
+- Hermes cannot grant itself additional privileges
 
-## Development Documentation
-
-As implementation progresses, this directory can grow with verified documentation such as:
-
-```text
-mcp_server/
-├── README.md
-├── architecture.md
-├── capabilities.md
-├── security.md
-├── testing.md
-└── changelog.md
-```
-
-Files should be added when there is real implementation or verified design material to document; empty placeholder files are intentionally avoided.
-
-## Current Boundary
-
-This README records the project and its intended architecture. It does not claim that unfinished MCP tools, integrations, or privileged actions are already available.
+Runtime credentials, host-specific service configuration, virtual environments and logs are intentionally excluded.
