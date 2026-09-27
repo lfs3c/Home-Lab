@@ -1,43 +1,49 @@
-# 🖥️ LF Home Lab — Hardware Overview
+# Home Lab Hardware Overview
 
-## 💻 Main Laptop — "LaptopU" (Ubuntu 24.04.3 LTS)
-- **Model:** OMEN Gaming Laptop 17-db0xxx
-- **CPU:** AMD Ryzen 7 8845HS (3.80 GHz, 8 cores, 16 threads)
-- **GPU:** NVIDIA RTX 4070 Laptop GPU (8 GB VRAM)
-- **RAM:** 32 GB (31.3 GB usable)
+This document provides a public hardware overview of the primary Home Lab nodes. Exact serial numbers, MAC addresses, private addressing, and other unnecessary identifiers are intentionally excluded.
+
+## LaptopU
+
+- **Model:** HP OMEN Gaming Laptop 17-db0xxx
+- **CPU:** AMD Ryzen 7 8845HS, 8 cores / 16 threads
+- **GPU:** NVIDIA GeForce RTX 4070 Laptop GPU, 8 GB VRAM
+- **RAM:** approximately 32 GB
 - **Storage:**
-  - **SSD 1 (1 TB):** Windows 11
-  - **SSD 2 (2 TB):** Ubuntu + shared storage + swap
-- **Dual Boot:** Windows 11 ↔ Ubuntu 24.04 LTS (GRUB)
-- **Main Purpose:** local AI/LLMs, development, testing, and virtualization
+  - approximately 2 TB NVMe SSD — Ubuntu
+  - approximately 1 TB NVMe SSD — Windows
+- **Operating system:** Ubuntu 24.04.5 LTS
+- **Primary role:** development, virtualization, cybersecurity labs, local AI workloads, and Home Lab administration
 
----
+Detailed documentation: [LaptopU](../infrastructure/laptopu/)
 
-## 🖥️ Home Server — "<SERVER_HOSTNAME>"
-- **Hardware:** Repurposed iMac
-- **CPU:** Intel® Core™ i5 (~3.4 GHz, quad-core)
-- **RAM:** 24 GB
-- **GPU:** AMD Radeon
-- **Disk:** 1 TB
-- **OS:** Ubuntu 24.04 LTS (headless)
-- **Main Purpose:** Docker services, automation, backups, scripts, and internal web tools
+## LF1
 
----
+- **Hardware platform:** Apple iMac14,2
+- **CPU:** Intel Core i5-4570, 4 cores / 4 threads
+- **Architecture:** x86_64
+- **System storage:** approximately 1 TB
+- **Additional storage:** dedicated PhotoPrism data storage and dedicated external backup storage
+- **Operating system:** Debian GNU/Linux 12 (Bookworm)
+- **Primary role:** self-hosted services, monitoring, automation, communication, network services, backups, and Home Lab administration
 
-## 🧠 Other Devices
-| Device | OS / Use | Notes |
-|--------|-----------|-------|
-| **Flipper Zero** | Custom firmware | Security testing and RF analysis |
-| **Raspberry Pi 3B** | Raspberry Pi OS | Experiments / lightweight services |
-| **Raspberry Pi 4B** | Raspberry Pi OS | NAS / personal cloud projects |
+Detailed documentation: [LF1](../infrastructure/lf1/)
 
----
+## Raspberry Pi 3
 
-### 🔗 Network and Integration
-- All systems are connected within a **secure private LAN**.
-- Exact internal IP addresses, SSIDs, usernames, MAC addresses, serial numbers, and operational hostnames are intentionally omitted from this public repository.
-- Local hostname resolution and Docker networks are used for service communication.
-- Internal services are restricted by host and network firewalls.
-- Shared storage volumes are used for backups and synchronization.
-- Containers and services use isolated Docker networking as appropriate.
-- Sensitive configuration (API keys, credentials, tokens, and private bindings) is supplied through environment variables or untracked configuration files and is never committed to this repository.
+The Raspberry Pi 3 is part of the hardware inventory. No services are currently documented for this node.
+
+Detailed documentation: [Raspberry Pi 3](../infrastructure/raspberry_pi_3/)
+
+## Raspberry Pi 4
+
+The Raspberry Pi 4 is part of the hardware inventory. No services are currently documented for this node.
+
+Detailed documentation: [Raspberry Pi 4](../infrastructure/raspberry_pi_4/)
+
+## Network and Integration
+
+Home Lab systems use private networking, host firewalls, container networks, and controlled remote-access mechanisms as appropriate.
+
+Detailed network documentation: [Home Lab Network](../infrastructure/network/)
+
+Sensitive configuration such as credentials, tokens, exact private addressing, MAC addresses, and private bindings is intentionally excluded from this public repository.
