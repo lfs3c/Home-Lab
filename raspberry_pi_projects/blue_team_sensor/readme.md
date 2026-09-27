@@ -25,7 +25,7 @@ The goal of this documentation is **clarity** and **reproducibility**. The proje
 ## Operating System
 
 - OS: `<distribution / release>`
-- Hostname: `pi3-sensor`
+- Hostname: `<SENSOR_HOSTNAME>`
 - User: `<username>`
 - Timezone: `<timezone>`
 - Locale: `<locale>`
@@ -50,8 +50,8 @@ Instead of starting with a full SIEM stack, this project focuses on establishing
 
 ### Hosts
 
-- **Sensor / Receiver:** `Raspberry pi3-sensor` (`192.168.50.x`)
-- **Log Source / Sender:** `Raspberry pi4-nas` (`192.168.50.x`)
+- **Sensor / Receiver:** `Raspberry <SENSOR_HOSTNAME>` (`<PRIVATE_LAN_IP>`)
+- **Log Source / Sender:** `Raspberry <LOG_SOURCE_HOSTNAME>` (`<PRIVATE_LAN_IP>`)
 
 ### Log Transport
 
@@ -63,7 +63,7 @@ Instead of starting with a full SIEM stack, this project focuses on establishing
 ### Log Flow
 
 ```text
-pi4-nas  --->  pi3-sensor
+<LOG_SOURCE_HOSTNAME>  --->  <SENSOR_HOSTNAME>
    syslog UDP 514
 ```
 
@@ -72,7 +72,7 @@ Logs received by the sensor are stored locally for later review and investigatio
 Example log path:
 
 ```text
-/var/log/remote/pi4-nas/syslog.log
+/var/log/remote/<LOG_SOURCE_HOSTNAME>/syslog.log
 ```
 
 ---
@@ -138,7 +138,7 @@ Typical checks include:
 Example:
 
 ```bash
-grep "Failed password" /var/log/remote/pi4-nas/syslog.log
+grep "Failed password" /var/log/remote/<LOG_SOURCE_HOSTNAME>/syslog.log
 ```
 
 This approach is simple, but already useful for visibility and investigation inside the homelab.
