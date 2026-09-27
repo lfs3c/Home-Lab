@@ -46,7 +46,7 @@ Below is a quick summary of what each script does:
 | [**stadium_ticket_sales.py**](stadium_ticket_sales.py) | Calculates ticket sales totals for different stadium seating categories. |
 | [**word_frequency_counter.py**](word_frequency_counter.py) | Reads a text file and counts how many times each word appears. |
 | [**write_numbers_to_file.py**](write_numbers_to_file.py) | Writes numbers from 1 to 100 into a text file. |
-| [**oop_mobile_phones**](https://github.com/LFreitas88/LF-Home-Lab/tree/main/PythonScripts/oop_mobile_phones) | Demonstrates Object-Oriented Programming: defines a `Mobile` class with attributes and methods, and shows how to use `self` to access data from another file. |
+| [**oop_mobile_phones**](oop_mobile_phones/) | Demonstrates Object-Oriented Programming: defines a `Mobile` class with attributes and methods, and shows how to use `self` to access data from another file. |
 
 
 ---
