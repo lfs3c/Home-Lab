@@ -329,7 +329,7 @@ hostnamectl
 Example:
 
 ```text
-server-lf1
+lab-server
 ```
 
 This is local system identity only.
