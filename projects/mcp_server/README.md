@@ -1,41 +1,57 @@
 # MCP Server for Home Lab
 
-**Status:** Planning / In Development
+**Status:** In Development on LF1
 
 ## Purpose
 
-This project will provide a self-hosted MCP server for controlled administration and observation of the Home Lab.
+The MCP Server is the developing LF1-hosted interface that will allow Hermes to interact with the Home Lab through explicit, controlled MCP tools.
 
-The intended design exposes explicit, authorized tools rather than unrestricted shell or generic HTTP access.
+It is being developed alongside the existing Hermes Control API. The Control API remains the verified baseline while MCP capabilities are implemented and validated.
 
-## Design Principles
-
-- Explicit tools and capabilities
-- Least privilege
-- Input validation
-- Authorization checks
-- Audit logging
-- Secrets kept outside the repository
-- Staged development and review before production changes
-
-## Intended Architecture
+## Architecture
 
 ```text
-Hermes VM
-    |
-    | MCP
-    v
+Hermes VM (LaptopU)
+        |
+        | MCP
+        v
 MCP Server (LF1)
-    |
-    +-- explicit tools
-    +-- authorization
-    +-- validation
-    +-- audit logging
-    |
-    v
+        |
+        +-- explicit tools
+        +-- authorization
+        +-- validation
+        +-- audit logging
+        |
+        v
 Home Lab
 ```
 
-## Documentation Scope
+## Design Principles
 
-This document describes design intent only. It does not claim that the MCP server is currently deployed or that specific LF1 services are already integrated. Live service documentation will be added only after the environment is verified.
+- explicit tools and capabilities
+- least privilege
+- input validation
+- authorization checks
+- audit logging
+- secrets kept outside the repository
+- staged development and independent review before production promotion
+
+## Development Documentation
+
+As implementation progresses, this directory can grow with verified documentation such as:
+
+```text
+mcp_server/
+├── README.md
+├── architecture.md
+├── capabilities.md
+├── security.md
+├── testing.md
+└── changelog.md
+```
+
+Files should be added when there is real implementation or verified design material to document; empty placeholder files are intentionally avoided.
+
+## Current Boundary
+
+This README records the project and its intended architecture. It does not claim that unfinished MCP tools, integrations, or privileged actions are already available.
