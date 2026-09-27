@@ -2,61 +2,115 @@
 
 Hands-on documentation for a self-hosted infrastructure and cybersecurity lab.
 
-This repository focuses on infrastructure, security, self-hosted services, technical projects, and selected study material that contributes to the lab. Personal desktop applications and unrelated software are intentionally outside its scope.
+This repository documents the infrastructure, security, self-hosted services, administration projects, and selected study material that contribute directly to the Home Lab. Personal desktop applications and unrelated personal projects are intentionally outside its scope.
 
 ## Repository Structure
 
-- `infrastructure/` — physical and logical lab nodes.
-- `services/` — documented self-hosted services.
-- `security/` — hardening and auditing material.
-- `projects/` — software and automation projects built for the lab.
+- `infrastructure/` — physical and logical lab nodes, networking, access, and backup infrastructure.
+- `services/` — verified self-hosted services.
+- `security/` — hardening, auditing, and host-protection material.
+- `projects/` — software and administration projects built for the lab.
 - `studies/` — selected academic and technical study material.
 - `legacy/` — historical implementations retained for reference.
 - `docs/` — general lab documentation.
 
 ## Infrastructure
 
-### LF1
+- [LF1](infrastructure/lf1/) — primary Home Lab server running Debian 12.
+- [LaptopU](infrastructure/laptopu/) — Ubuntu workstation for development, virtualization, cybersecurity labs, local AI, and Home Lab administration.
+- [Raspberry Pi 3](infrastructure/raspberry_pi_3/) — hardware node with no services currently documented.
+- [Raspberry Pi 4](infrastructure/raspberry_pi_4/) — hardware node with no services currently documented.
+- [Network](infrastructure/network/) — verified Home Lab network overview.
+- [Access](infrastructure/access/) — supporting private-access and routing components.
+- [Backup](infrastructure/backup/) — LF1 manual BorgBackup workflow and dedicated backup storage.
 
-LF1 is the primary home server. Its current service inventory will be documented only after the live environment has been verified.
+A public hardware summary is available in [docs/hardware.md](docs/hardware.md).
 
-### LaptopU
+## Services
 
-LaptopU is used for development, testing, virtualization, and local AI workloads. Detailed documentation will be added from verified system state.
+### Automation
 
-### Raspberry Pi 3
+- [n8n](services/automation/n8n/)
 
-The Raspberry Pi 3 is part of the lab hardware inventory. No services are currently documented for this node.
+### Communication
 
-### Raspberry Pi 4
+- [Matrix / Synapse](services/communication/matrix_synapse/)
 
-The Raspberry Pi 4 is part of the lab hardware inventory. No services are currently documented for this node.
+### Dashboard
 
-## Documented Services
+- [Heimdall](services/dashboard/heimdall/)
 
-- [Matrix / Synapse](services/communication/matrix_synapse/) — existing Matrix/Synapse deployment documentation.
+### Documentation
+
+- [Wiki.js](services/documentation/wikijs/)
+
+### Infrastructure Management
+
+- [NetBox](services/infrastructure/netbox/)
+- [Portainer](services/management/portainer/)
+
+### Media and Personal Cloud
+
+- [Audiobookshelf](services/media/audiobookshelf/)
+- [Jellyfin](services/media/jellyfin/)
+- [Navidrome](services/media/navidrome/)
+- [PhotoPrism](services/media/photoprism/)
+
+### Monitoring
+
+- [LibreNMS](services/monitoring/librenms/)
+- [Zabbix](services/monitoring/zabbix/)
+
+### Network
+
+- [Pi-hole](services/network/pihole/)
+
+Services are listed as current only after their live state has been verified. Supporting databases, caches, and similar dependencies are documented with the services that use them rather than treated automatically as independent Home Lab projects.
 
 ## Security
 
-Existing hardening and auditing material is organized under `security/`, including Lynis and systemd security analysis.
+Security material is organized under [security/](security/).
 
-Historical Raspberry Pi security experiments are retained under `legacy/` rather than presented as current deployments.
+Current areas include:
 
-## Projects
+- Lynis auditing
+- systemd security analysis
+- hardening notes
+- host-protection components
 
-- [MCP Server](projects/mcp_server/) — planned self-hosted MCP interface for controlled Home Lab administration and observation.
+Historical security experiments are retained under `legacy/` when they no longer represent the current environment.
+
+## Hermes and Administration Projects
+
+- [Hermes](projects/hermes/) — Home Lab administration assistant architecture spanning the Hermes VM on LaptopU and controlled interfaces on LF1.
+- [Hermes Control API](projects/hermes_control_api/) — active LF1-hosted control interface and current verified baseline.
+- [MCP Server](projects/mcp_server/) — LF1-hosted MCP interface currently in development.
+
+The Control API remains the verified baseline while MCP capabilities are developed and validated.
 
 ## Studies
 
-Python coursework and exercises are preserved under [`studies/python/`](studies/python/) with filenames normalized to snake_case.
+Python coursework and exercises are preserved under [studies/python/](studies/python/) with filenames normalized to snake_case.
+
+Study material is included selectively when it contributes to the technical history or skills represented by the lab.
 
 ## Legacy
 
-Older implementations remain available for historical and learning context. Content under `legacy/` should not be interpreted as the current production state of the Home Lab.
+Older implementations remain under [legacy/](legacy/) for historical and learning context.
+
+Legacy content must not be interpreted as the current production state of the Home Lab. This includes the historical Raspberry Pi PhotoPrism deployment; the current PhotoPrism service is hosted on LF1.
+
+## Documentation Principles
+
+- Document verified current state rather than assumptions.
+- Keep infrastructure and service documentation separate where practical.
+- Treat dependencies as part of the service that uses them unless they have an independent Home Lab role.
+- Keep personal projects and ordinary desktop applications outside the Home-Lab repository.
+- Add implementation documentation as projects evolve instead of creating empty placeholder files.
 
 ## Public Repository Safety
 
-Operational secrets, credentials, exact private addressing, SSIDs, MAC addresses, serial numbers, and other sensitive infrastructure details are intentionally excluded from this public repository.
+Operational secrets, credentials, tokens, exact private addressing, SSIDs, MAC addresses, serial numbers, private repository paths, and other unnecessary sensitive infrastructure details are intentionally excluded from this public repository.
 
 ## License
 
