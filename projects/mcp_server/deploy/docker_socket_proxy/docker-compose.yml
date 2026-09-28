@@ -1,0 +1,80 @@
+services:
+  socket-proxy:
+    image: lscr.io/linuxserver/socket-proxy:latest
+    container_name: lf1-docker-socket-proxy
+
+    environment:
+      TZ: America/New_York
+
+      # Operacoes HTTP mutaveis bloqueadas
+      POST: "0"
+
+      # Unica area Docker necessaria neste momento
+      CONTAINERS: "1"
+
+      # Sub-endpoints GET sensiveis explicitamente bloqueados
+      ALLOW_ARCHIVE: "0"
+      ALLOW_CHANGES: "0"
+      ALLOW_EXPORT: "0"
+      ALLOW_LOGS: "0"
+      ALLOW_TOP: "0"
+
+      # Operacoes de estado explicitamente bloqueadas
+      ALLOW_START: "0"
+      ALLOW_STOP: "0"
+      ALLOW_RESTARTS: "0"
+      ALLOW_PAUSE: "0"
+      ALLOW_UNPAUSE: "0"
+
+      # Demais areas Docker bloqueadas
+      AUTH: "0"
+      BUILD: "0"
+      COMMIT: "0"
+      CONFIGS: "0"
+      DISTRIBUTION: "0"
+      EVENTS: "0"
+      EXEC: "0"
+      IMAGES: "0"
+      INFO: "0"
+      NETWORKS: "0"
+      NODES: "0"
+      PLUGINS: "0"
+      SECRETS: "0"
+      SERVICES: "0"
+      SESSION: "0"
+      SWARM: "0"
+      SYSTEM: "0"
+      TASKS: "0"
+      VOLUMES: "0"
+
+      # Apenas utilitarios inocuos
+      PING: "1"
+      VERSION: "1"
+
+      # Podman/libpod nao utilizado
+      LIBPOD_CONTAINERS: "0"
+      LIBPOD_EVENTS: "0"
+      LIBPOD_EXEC: "0"
+      LIBPOD_GENERATE: "0"
+      LIBPOD_IMAGES: "0"
+      LIBPOD_INFO: "0"
+      LIBPOD_MANIFESTS: "0"
+      LIBPOD_NETWORKS: "0"
+      LIBPOD_PLAY: "0"
+      LIBPOD_PODS: "0"
+      LIBPOD_SECRETS: "0"
+      LIBPOD_SYSTEM: "0"
+      LIBPOD_VOLUMES: "0"
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+    ports:
+      - "127.0.0.1:2375:2375"
+
+    read_only: true
+
+    tmpfs:
+      - /run
+
+    restart: unless-stopped

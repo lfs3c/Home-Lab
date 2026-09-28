@@ -1,48 +1,114 @@
 # LF1 MCP Server
 
-![Status](https://img.shields.io/badge/Status-Milestone%201%20Complete-28A745) ![MCP](https://img.shields.io/badge/MCP-Server-6C63FF) ![LF1](https://img.shields.io/badge/Host-LF1-A81D33?logo=debian&logoColor=white) ![Security](https://img.shields.io/badge/Security-Least%20Privilege-28A745)
+![Status](https://img.shields.io/badge/Status-Docker%20Observability%20Complete-28A745) ![MCP](https://img.shields.io/badge/MCP-Server-6C63FF) ![LF1](https://img.shields.io/badge/Host-LF1-A81D33?logo=debian&logoColor=white) ![Security](https://img.shields.io/badge/Security-Least%20Privilege-28A745)
 
-**Status:** Milestone 1 complete — authenticated Hermes → LF1 MCP communication
+Security-focused MCP server that provides Hermes with controlled access to the LF1 Home Lab through explicit, least-privilege capabilities.
 
-## Purpose
+## Current Status
 
-The LF1 MCP Server is a security-focused interface that lets Hermes interact with the Home Lab through explicit, controlled MCP tools.
+The Docker observability milestone is complete.
 
-The previous Hermes Control API is frozen and retained only as a reference/fallback. New Home Lab integration work is being developed through MCP.
+Current end-to-end path:
 
-## Milestone 1
+    Hermes VM
+        |
+        | MCP Streamable HTTP + Bearer authentication
+        v
+    LF1 MCP Server
+    192.168.50.18:8000/mcp
+        |
+        | systemd: lf1-mcp.service
+        | User: lf1-mcp
+        | NoNewPrivileges=yes
+        |
+        +-- ping
+        |
+        +-- system_health
+        |
+        +-- containers_list
+                |
+                | HTTP GET
+                v
+           127.0.0.1:2375
+           Docker Socket Proxy
+                |
+                v
+           Docker daemon
 
-Verified end-to-end:
+## Current MCP Tools
 
-- official Python MCP SDK (`mcp` 2.2.x)
-- local MCP communication over stdio
-- Streamable HTTP transport
-- persistent systemd service on LF1
-- network access restricted by host firewall
-- Bearer-token authentication
-- anonymous and invalid-token requests rejected with HTTP 401
-- valid token successfully initializes an MCP session
-- Hermes VM discovers and calls the MCP tools remotely
-- `system_health` returns live LF1 health data
-- Hermes completed the remote call without using the frozen Control API
+### ping
 
-## Current tools
+Confirms that the LF1 MCP Server is responding.
 
-| Tool | Access | Purpose |
-| --- | --- | --- |
-| `ping` | read-only | Confirm that the MCP server is responding |
-| `system_health` | read-only | Read hostname, uptime, load averages, memory and root filesystem usage |
+### system_health
 
-## Security model
+Returns read-only host information from authoritative local Linux sources:
+
+- hostname
+- uptime
+- load averages
+- memory usage
+- root filesystem usage
+
+### containers_list
+
+Returns a read-only Docker container inventory containing:
+
+- container name
+- image
+- state
+- status
+- total container count
+- running count
+- stopped count
+
+The MCP process does not have direct access to /var/run/docker.sock.
+
+Docker information is obtained through a restricted socket proxy bound only to 127.0.0.1.
+
+## Security Principles
 
 - least privilege
 - read-only first
-- explicit MCP tools
-- no generic shell or arbitrary command execution
-- Bearer authentication for remote MCP access
-- credentials stored outside the repository
-- host firewall restricts network access
-- administrative capabilities require explicit design and review
-- Hermes cannot grant itself additional privileges
+- explicit MCP capabilities
+- no generic shell execution
+- no arbitrary command execution
+- dedicated MCP service identity
+- secrets outside the repository
+- network restriction plus application authentication
+- restricted intermediary for privileged subsystems
+- human authorization for future administrative capabilities
 
-Runtime credentials, host-specific service configuration, virtual environments and logs are intentionally excluded.
+## Runtime
+
+Development source:
+
+    /home/leandro/Desktop/Projects/mcp_server
+
+Production runtime:
+
+    /opt/lf1-mcp
+
+Systemd service:
+
+    lf1-mcp.service
+
+Service identity:
+
+    lf1-mcp
+
+The production service account is not a member of the Docker group.
+
+## Documentation
+
+- docs/architecture.md
+- docs/security.md
+- docs/testing.md
+- docs/changelog.md
+
+## Deployment Assets
+
+The restricted Docker socket proxy configuration is stored under:
+
+    deploy/docker_socket_proxy/
