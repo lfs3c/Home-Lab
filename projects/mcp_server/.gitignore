@@ -4,6 +4,7 @@
 # Python generated files
 __pycache__/
 *.py[cod]
+*.egg-info/
 
 # Test/cache files
 .pytest_cache/
@@ -13,6 +14,10 @@ __pycache__/
 # Secrets / local configuration
 .env
 .env.*
+credentials.env
+
+# Logs
+*.log
 
 # Editor / OS files
 .vscode/
