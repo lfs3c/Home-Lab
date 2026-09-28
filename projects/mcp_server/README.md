@@ -1,10 +1,12 @@
 # LF1 MCP Server
 
+![Status](https://img.shields.io/badge/Status-Storage%20Observability%20Complete-28A745) ![MCP](https://img.shields.io/badge/MCP-Server-6C63FF) ![LF1](https://img.shields.io/badge/Host-LF1-A81D33?logo=debian&logoColor=white) ![Security](https://img.shields.io/badge/Security-Least%20Privilege-28A745)
+
 Security-focused MCP server that provides Hermes with controlled access to the LF1 Home Lab through explicit, least-privilege capabilities.
 
 ## Current Status
 
-The Docker observability milestone is complete.
+Storage observability is complete.
 
 Current end-to-end path:
 
@@ -13,7 +15,6 @@ Current end-to-end path:
         | MCP Streamable HTTP + Bearer authentication
         v
     LF1 MCP Server
-    192.168.50.18:8000/mcp
         |
         | systemd: lf1-mcp.service
         | User: lf1-mcp
@@ -24,14 +25,19 @@ Current end-to-end path:
         +-- system_health
         |
         +-- containers_list
+        |       |
+        |       | HTTP GET through localhost-only proxy
+        |       v
+        |   Docker Socket Proxy
+        |       |
+        |       v
+        |   Docker daemon
+        |
+        +-- storage_list
                 |
-                | HTTP GET
-                v
-           127.0.0.1:2375
-           Docker Socket Proxy
-                |
-                v
-           Docker daemon
+                +-- fixed read-only lsblk / df queries
+
+Exact LAN addresses, ports, personal development paths, and credentials are intentionally omitted from public documentation.
 
 ## Current MCP Tools
 
@@ -41,29 +47,26 @@ Confirms that the LF1 MCP Server is responding.
 
 ### system_health
 
-Returns read-only host information from authoritative local Linux sources:
-
-- hostname
-- uptime
-- load averages
-- memory usage
-- root filesystem usage
+Returns read-only host information from authoritative local Linux sources, including hostname, uptime, load averages, memory usage, and root filesystem usage.
 
 ### containers_list
 
-Returns a read-only Docker container inventory containing:
+Returns a read-only Docker container inventory with container name, image, state, status, and summary counts.
 
-- container name
-- image
-- state
-- status
-- total container count
-- running count
-- stopped count
+The MCP process does not have direct access to the Docker socket. Docker information is obtained through a restricted localhost-only socket proxy.
 
-The MCP process does not have direct access to /var/run/docker.sock.
+### storage_list
 
-Docker information is obtained through a restricted socket proxy bound only to 127.0.0.1.
+Returns normalized read-only storage information:
+
+- physical disk name, model, and size
+- partitions and filesystem types
+- UUIDs
+- mount points
+- filesystem size and available space
+- usage percentage
+
+New disks attached to LF1 are discovered dynamically and do not require source-code changes. The response model includes host/source information so additional authorized hosts can be integrated later without redesigning the storage schema.
 
 ## Security Principles
 
@@ -82,7 +85,7 @@ Docker information is obtained through a restricted socket proxy bound only to 1
 
 Development source:
 
-    /home/leandro/Desktop/Projects/mcp_server
+    local LF1 development workspace
 
 Production runtime:
 
