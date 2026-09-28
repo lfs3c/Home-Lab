@@ -10,6 +10,7 @@ from lf1_mcp.auth import (
     RESOURCE_URL,
 )
 from lf1_mcp.tools.system_health import get_system_health
+from lf1_mcp.tools.storage_list import get_storage_list
 from lf1_mcp.tools.containers_list import get_containers_list
 
 
@@ -42,6 +43,12 @@ def containers_list() -> dict:
     """Return a read-only list of Docker containers and their states."""
     return get_containers_list()
 
+
+
+@mcp.tool()
+def storage_list() -> dict:
+    """Return read-only LF1 disk, partition, mount, and usage information."""
+    return get_storage_list()
 
 def main() -> None:
     parser = argparse.ArgumentParser(
