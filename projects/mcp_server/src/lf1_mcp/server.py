@@ -11,6 +11,7 @@ from lf1_mcp.auth import (
 )
 from lf1_mcp.tools.system_health import get_system_health
 from lf1_mcp.tools.storage_list import get_storage_list
+from lf1_mcp.tools.services_list import get_services_list
 from lf1_mcp.tools.containers_list import get_containers_list
 
 
@@ -49,6 +50,12 @@ def containers_list() -> dict:
 def storage_list() -> dict:
     """Return read-only LF1 disk, partition, mount, and usage information."""
     return get_storage_list()
+
+
+@mcp.tool()
+def services_list() -> dict:
+    """Return read-only LF1 systemd service information."""
+    return get_services_list()
 
 def main() -> None:
     parser = argparse.ArgumentParser(

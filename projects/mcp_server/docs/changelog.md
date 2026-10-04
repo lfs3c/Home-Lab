@@ -1,5 +1,36 @@
 # Changelog
 
+## 2026-09-29 - systemd Service Observability Milestone
+
+### Added
+
+- `services_list` MCP tool
+- read-only systemd service discovery
+- normalized service information and summary output
+- dynamic discovery of newly added systemd services
+- filtering of non-service blocks
+- focused unit tests for service normalization and discovery
+- Hermes end-to-end validation of `services_list`
+
+### Security
+
+- no generic shell capability was introduced
+- Hermes cannot supply arbitrary operating-system commands
+- Hermes cannot supply arbitrary `systemctl` commands
+- the capability remains read-only
+- the MCP service continues to run as the dedicated `lf1-mcp` identity
+
+### Validated MCP Tools
+
+- `ping`
+- `system_health`
+- `containers_list`
+- `storage_list`
+- `services_list`
+
+Milestone status: complete.
+
+
 ## 2026-09-28 - Storage Observability Milestone
 
 ### Added

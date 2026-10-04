@@ -58,3 +58,35 @@ Fresh-session Hermes end-to-end validation confirmed discovery and execution of:
 The validation used only the LF1 MCP server and did not use the Hermes Control API.
 
 Observed filesystem usage values are runtime observations, not configuration constants.
+
+## services_list
+
+Test:
+
+    tests/test_services_list.py
+
+The tests validate:
+
+- normalization and summary of systemd service information
+- dynamic discovery of newly added services without code changes
+- filtering of non-service blocks
+
+At milestone closure, the complete development test suite returned:
+
+    6 passed
+
+## services_list Hermes End-to-End Validation
+
+A fresh Hermes session successfully discovered and executed:
+
+    mcp__lf1__services_list
+
+The production result was obtained through the authenticated Streamable HTTP
+MCP path.
+
+Validated path:
+
+    Hermes
+      -> authenticated MCP
+      -> services_list
+      -> LF1 systemd

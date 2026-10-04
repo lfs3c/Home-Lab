@@ -90,3 +90,16 @@ The capability discovers LF1 block devices dynamically rather than maintaining a
 The response identifies its source host, keeping the current implementation local while allowing future authorized servers or VMs to use the same normalized model.
 
 Adding another physical disk to LF1 does not require adding that device to MCP source code.
+
+## systemd Service Observability
+
+The `services_list` MCP capability provides read-only visibility into LF1
+systemd services.
+
+The capability queries systemd through a narrowly defined implementation and
+normalizes the result before returning it through MCP.
+
+Service discovery is dynamic rather than based on a hard-coded inventory.
+
+Hermes is not given arbitrary `systemctl` arguments, arbitrary operating-system
+commands, or generic shell access.

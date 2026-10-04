@@ -68,6 +68,19 @@ Returns normalized read-only storage information:
 
 New disks attached to LF1 are discovered dynamically and do not require source-code changes. The response model includes host/source information so additional authorized hosts can be integrated later without redesigning the storage schema.
 
+
+### services_list
+
+Returns read-only systemd service observability including normalized service
+information and summary counts.
+
+Service discovery comes from systemd rather than from a hard-coded service
+inventory. New services can therefore become observable without creating a
+new MCP capability for each service.
+
+The capability does not expose arbitrary `systemctl` execution or generic
+shell access.
+
 ## Security Principles
 
 - least privilege
