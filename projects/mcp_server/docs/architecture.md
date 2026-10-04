@@ -103,3 +103,29 @@ Service discovery is dynamic rather than based on a hard-coded inventory.
 
 Hermes is not given arbitrary `systemctl` arguments, arbitrary operating-system
 commands, or generic shell access.
+
+## LibreNMS Integration
+
+LibreNMS is an authoritative network-observability source for Hermes.
+
+Current production path:
+
+    Hermes VM
+        |
+        | MCP Streamable HTTP + Bearer authentication
+        v
+    LF1 MCP Server
+        |
+        | network_devices_list
+        v
+    LibreNMS HTTP API
+        |
+        v
+    Network device inventory
+
+The current integration is read-only and exposes a specific normalized MCP
+capability rather than a generic LibreNMS API proxy.
+
+The long-term objective is to progressively register and monitor the Home Lab
+network in LibreNMS. Future write operations and device enrollment remain
+separate security milestones.

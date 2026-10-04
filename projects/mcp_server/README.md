@@ -81,6 +81,20 @@ new MCP capability for each service.
 The capability does not expose arbitrary `systemctl` execution or generic
 shell access.
 
+### network_devices_list
+
+Returns a normalized read-only view of network devices currently known by
+LibreNMS, including device identity, operating system, status, disabled/ignored
+state, and summary counts.
+
+LibreNMS is queried through its HTTP API using credentials stored outside the
+repository. The current integration is read-only.
+
+The long-term objective is to progressively register and monitor the Home Lab
+network in LibreNMS so Hermes can use it as an authoritative network-
+observability source. Controlled write capabilities and discovery workflows
+are separate future security milestones.
+
 ## Security Principles
 
 - least privilege

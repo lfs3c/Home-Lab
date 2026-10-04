@@ -59,3 +59,16 @@ Storage observability therefore does not add a generic command-execution capabil
 Hermes is not given arbitrary shell execution, arbitrary Docker API access, arbitrary URLs or HTTP methods, arbitrary operating-system commands, direct Docker socket access, or privilege-escalation capabilities.
 
 Each future administrative capability must receive its own security design and review.
+
+## LibreNMS Security Boundary
+
+The current LibreNMS integration is read-only and follows least privilege.
+
+- Hermes receives only the explicit `network_devices_list` capability.
+- No generic LibreNMS API proxy is exposed.
+- LibreNMS credentials remain outside the repository.
+- Credential values are not returned by the MCP capability.
+- Administrative LibreNMS privileges are not required.
+
+Future write capabilities must be separate, narrow operations with validation,
+least privilege, auditing, and human authorization appropriate to the action.

@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-10-04 — LibreNMS read-only network observability
+
+- Added `network_devices_list`.
+- Added normalized LibreNMS device inventory and status summaries.
+- Added the explicit `requests` dependency.
+- Kept LibreNMS credentials outside the repository.
+- Promoted and validated the capability on LF1 production.
+- Validated end-to-end execution from Hermes.
+- Development test suite: 9 passed.
+- Established the objective of progressively registering and monitoring the
+  Home Lab network through LibreNMS.
+- LibreNMS write capabilities remain a separate future milestone.
+
+
 ## 2026-09-29 - systemd Service Observability Milestone
 
 ### Added

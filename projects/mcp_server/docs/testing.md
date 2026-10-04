@@ -90,3 +90,22 @@ Validated path:
       -> authenticated MCP
       -> services_list
       -> LF1 systemd
+
+## LibreNMS network_devices_list
+
+Automated tests verify device normalization, status summaries, rejection of
+invalid device payloads, and that the LibreNMS token is absent from returned
+results.
+
+The development suite passes 9 tests.
+
+Real end-to-end validation confirmed:
+
+- LibreNMS API access with the dedicated credential
+- production MCP environment loading
+- Hermes discovery and execution of `network_devices_list`
+- successful device inventory retrieval
+
+Validated path:
+
+    Hermes VM -> LF1 MCP -> LibreNMS API -> network inventory -> Hermes

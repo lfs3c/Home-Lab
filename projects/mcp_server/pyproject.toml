@@ -5,6 +5,7 @@ description = "Security-focused MCP server for the LF1 Home Lab"
 requires-python = ">=3.11"
 dependencies = [
     "mcp[cli]>=2.2,<3",
+    "requests>=2.32,<3",
 ]
 
 [build-system]
