@@ -5,7 +5,9 @@ from mcp.server.auth.settings import AuthSettings
 from pydantic import AnyHttpUrl
 
 from lf1_mcp.auth import (
-    HermesTokenVerifier,
+    LF1TokenVerifier,
+    MCP_HOST,
+    MCP_PORT,
     REQUIRED_SCOPE,
     RESOURCE_URL,
 )
@@ -17,8 +19,8 @@ from lf1_mcp.tools.network_devices_list import get_network_devices_list
 
 
 mcp = MCPServer(
-    "LF1 MCP Server",
-    token_verifier=HermesTokenVerifier(),
+    "MCP Server - LF1",
+    token_verifier=LF1TokenVerifier(),
     auth=AuthSettings(
         issuer_url=AnyHttpUrl("https://auth.invalid"),
         resource_server_url=AnyHttpUrl(RESOURCE_URL),
@@ -30,8 +32,8 @@ mcp = MCPServer(
 
 @mcp.tool()
 def ping() -> str:
-    """Confirm that the LF1 MCP Server is responding."""
-    return "LF1 MCP Server is alive"
+    """Confirm that the MCP Server - LF1 is responding."""
+    return "MCP Server - LF1 is alive"
 
 
 @mcp.tool()
@@ -80,7 +82,7 @@ def network_devices_list() -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="LF1 MCP Server"
+        description="MCP Server - LF1"
     )
 
     parser.add_argument(
@@ -95,8 +97,8 @@ def main() -> None:
     if args.transport == "streamable-http":
         mcp.run(
             "streamable-http",
-            host="192.168.50.18",
-            port=8000,
+            host=MCP_HOST,
+            port=MCP_PORT,
             streamable_http_path="/mcp",
         )
     else:

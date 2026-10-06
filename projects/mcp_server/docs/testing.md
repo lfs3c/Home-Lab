@@ -97,7 +97,7 @@ Automated tests verify device normalization, status summaries, rejection of
 invalid device payloads, and that the LibreNMS token is absent from returned
 results.
 
-The development suite passes 9 tests.
+At that historical milestone, the development suite passed 9 tests.
 
 Real end-to-end validation confirmed:
 
@@ -109,3 +109,7 @@ Real end-to-end validation confirmed:
 Validated path:
 
     Hermes VM -> LF1 MCP -> LibreNMS API -> network inventory -> Hermes
+
+## Latest Owner-Reported Milestone
+
+The approved private baseline recorded 36 passing tests and production validation of `network_device_status`. Those newer source files and tests are not present in this public snapshot, so that 36-test result is historical evidence, not a result reproduced from this checkout. Historical Hermes end-to-end validations above remain unchanged.

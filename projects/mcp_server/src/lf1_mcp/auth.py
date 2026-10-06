@@ -4,11 +4,15 @@ import secrets
 from mcp.server.auth.provider import AccessToken, TokenVerifier
 
 
-RESOURCE_URL = "http://192.168.50.18:8000/mcp"
+MCP_HOST = os.environ.get("LF1_MCP_HOST", "127.0.0.1")
+MCP_PORT = int(os.environ.get("LF1_MCP_PORT", "8000"))
+RESOURCE_URL = os.environ.get(
+    "LF1_MCP_RESOURCE_URL", f"http://{MCP_HOST}:{MCP_PORT}/mcp"
+)
 REQUIRED_SCOPE = "lf1:read"
 
 
-class HermesTokenVerifier(TokenVerifier):
+class LF1TokenVerifier(TokenVerifier):
     async def verify_token(self, token: str) -> AccessToken | None:
         expected_token = os.environ.get("LF1_MCP_TOKEN")
 
@@ -20,8 +24,8 @@ class HermesTokenVerifier(TokenVerifier):
 
         return AccessToken(
             token=token,
-            client_id="hermes",
+            client_id="authorized-mcp-client",
             scopes=[REQUIRED_SCOPE],
             resource=RESOURCE_URL,
-            subject="hermes-agent",
+            subject="authorized-mcp-client",
         )

@@ -1,20 +1,24 @@
-# LF1 MCP Server
+![Status](https://img.shields.io/badge/Status-LibreNMS%20Read%20Phase%20v1%20Complete-28A745) ![MCP](https://img.shields.io/badge/MCP-Server-6C63FF) ![LF1](https://img.shields.io/badge/Host-LF1-A81D33?logo=debian&logoColor=white) ![Security](https://img.shields.io/badge/Security-Least%20Privilege-28A745)
 
-![Status](https://img.shields.io/badge/Status-Storage%20Observability%20Complete-28A745) ![MCP](https://img.shields.io/badge/MCP-Server-6C63FF) ![LF1](https://img.shields.io/badge/Host-LF1-A81D33?logo=debian&logoColor=white) ![Security](https://img.shields.io/badge/Security-Least%20Privilege-28A745)
+# MCP Server - LF1
 
-Security-focused MCP server that provides Hermes with controlled access to the LF1 Home Lab through explicit, least-privilege capabilities.
+Security-focused MCP server that provides ChatGPT and other explicitly authorized MCP clients with controlled access to the LF1 Home Lab through explicit, least-privilege capabilities.
 
 ## Current Status
 
-Storage observability is complete.
+LibreNMS Read Phase v1 is complete. ChatGPT is the primary MCP client; other explicitly authorized MCP clients remain supported.
+
+`network_device_status` is in production, as confirmed by the project owner. `network_device_add` remains DEV-only and is not exposed in production.
+
+This public source snapshot includes `network_devices_list` but does not yet include the implementation or tests of `network_device_status` or `network_device_add`. The production milestone is documented here; this checkout alone does not reproduce that newer deployment.
 
 Current end-to-end path:
 
-    Hermes VM
+    Authorized MCP client
         |
         | MCP Streamable HTTP + Bearer authentication
         v
-    LF1 MCP Server
+    MCP Server - LF1
         |
         | systemd: lf1-mcp.service
         | User: lf1-mcp
@@ -43,7 +47,7 @@ Exact LAN addresses, ports, personal development paths, and credentials are inte
 
 ### ping
 
-Confirms that the LF1 MCP Server is responding.
+Confirms that the MCP Server - LF1 is responding.
 
 ### system_health
 
@@ -91,9 +95,17 @@ LibreNMS is queried through its HTTP API using credentials stored outside the
 repository. The current integration is read-only.
 
 The long-term objective is to progressively register and monitor the Home Lab
-network in LibreNMS so Hermes can use it as an authoritative network-
+network in LibreNMS so authorized MCP clients can use it as an authoritative network-
 observability source. Controlled write capabilities and discovery workflows
 are separate future security milestones.
+
+### network_device_status (production milestone)
+
+Provides normalized read-only LibreNMS device health. Its production status is owner-confirmed; its implementation is not included in this public snapshot.
+
+### network_device_add (DEV-only)
+
+A separate development write capability. It has not been promoted to production and is not included in this snapshot.
 
 ## Security Principles
 
@@ -116,7 +128,7 @@ Development source:
 
 Production runtime:
 
-    /opt/lf1-mcp
+    dedicated production runtime outside the development workspace
 
 Systemd service:
 
@@ -140,3 +152,9 @@ The production service account is not a member of the Docker group.
 The restricted Docker socket proxy configuration is stored under:
 
     deploy/docker_socket_proxy/
+
+## Runtime Configuration
+
+Set `LF1_MCP_HOST`, `LF1_MCP_PORT`, and `LF1_MCP_RESOURCE_URL` for the intended deployment. The resource URL must match the client-facing MCP endpoint. Defaults use loopback for local development. Keep `LF1_MCP_TOKEN`, `LIBRENMS_URL`, and `LIBRENMS_TOKEN` outside Git.
+
+The Docker proxy loopback binding and protocol port in the deployment example are required to describe its isolation boundary; they are not LAN access instructions.

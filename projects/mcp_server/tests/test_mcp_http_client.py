@@ -7,7 +7,7 @@ from mcp import ClientSession
 from mcp.client.streamable_http import streamable_http_client
 
 
-MCP_URL = "http://192.168.50.18:8000/mcp"
+MCP_URL = os.environ.get("LF1_MCP_RESOURCE_URL", "http://127.0.0.1:8000/mcp")
 
 
 async def main():

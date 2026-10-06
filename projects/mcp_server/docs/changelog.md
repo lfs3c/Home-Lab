@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-06 — Public documentation and configuration update
+
+- Standardized the public name as MCP Server - LF1 and retained README badges.
+- Identified ChatGPT as the primary client, with other explicitly authorized clients supported.
+- Recorded owner-confirmed completion of LibreNMS Read Phase v1 and production status of `network_device_status`.
+- Kept `network_device_add` DEV-only. Neither newer implementation is included in this source snapshot.
+- Removed deployment-specific addresses and paths; made MCP endpoint configuration environment-based.
+- Preserved historical Hermes test records.
+
+
 ## 2026-10-04 — LibreNMS read-only network observability
 
 - Added `network_devices_list`.
@@ -73,7 +83,7 @@ Milestone status: complete.
 ### Added
 
 - dedicated `lf1-mcp` system service account
-- production runtime separation under `/opt/lf1-mcp`
+- production runtime separation in a dedicated production directory
 - `NoNewPrivileges=yes`
 - restricted Docker Socket Proxy
 - localhost-only Docker proxy binding

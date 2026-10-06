@@ -40,7 +40,7 @@ def test_network_devices_list_normalizes_devices():
         return_value=response,
     ) as mock_get:
         result = get_network_devices_list(
-            base_url="http://127.0.0.1:8085",
+            base_url="https://librenms.example.invalid",
             token="test-token",
         )
 
@@ -72,7 +72,7 @@ def test_network_devices_list_normalizes_devices():
     ]
 
     mock_get.assert_called_once_with(
-        "http://127.0.0.1:8085/api/v0/devices",
+        "https://librenms.example.invalid/api/v0/devices",
         headers={"Authorization": "Bearer test-token"},
         timeout=10,
     )
@@ -96,7 +96,7 @@ def test_network_devices_list_does_not_return_token():
         return_value=response,
     ):
         result = get_network_devices_list(
-            base_url="http://127.0.0.1:8085",
+            base_url="https://librenms.example.invalid",
             token=secret,
         )
 
@@ -120,7 +120,7 @@ def test_network_devices_list_rejects_invalid_devices_payload():
     ):
         try:
             get_network_devices_list(
-                base_url="http://127.0.0.1:8085",
+                base_url="https://librenms.example.invalid",
                 token="test-token",
             )
         except ValueError:
